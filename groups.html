@@ -790,7 +790,7 @@
                     <span class="group-tag">Для РП</span>
                 </div>
                 <div class="group-desc">
-                    <p>Бюджетные группы для РП. <strong>Не поддерживают кэширование.</strong> В группах <code>Auto</code> и <code>All</code> соответствующие модели имеют суффикс <code>-r</code>.</p>
+                    <p>Бюджетные группы для РП. <strong> Claude в данный момент имеет баг с кэшированием. </strong> В группах <code>Auto</code> и <code>All</code> соответствующие модели имеют суффикс <code>-r</code>.</p>
                 </div>
             </article>
 
@@ -811,6 +811,38 @@
         </div>
     </section>
 
+<section class="section" id="cache-warning" aria-labelledby="cacheWarningTitle">
+    <div class="section-header">
+        <div class="section-icon" aria-hidden="true">⚠️</div>
+        <h2 class="section-title" id="cacheWarningTitle">Ошибка кэша и повышенный расход</h2>
+    </div>
+
+    <div class="cache-alert">
+        <p><strong>Обратите внимание.</strong> На некоторых группах Claude, особенно в <code>claudecheap</code>, а также у моделей с суффиксом <code>-r</code> в группе <code>default</code>, возможен баг с кэшем.</p>
+
+        <p>В журнале использования он может выглядеть как <strong>аномально большое количество токенов кэша</strong> и сопровождаться <strong>повышенным списанием юаней</strong>. Пример — на скриншоте ниже.</p>
+
+        <p>Если заметили такой расход, проверьте запись в журнале использования и попробуйте сменить группу или модель. Если проблема повторяется, сообщите о ней в <strong>proxy support</strong> и приложите скриншот записи.</p>
+
+        <figure class="cache-screenshot">
+            <a
+                href="https://i.ibb.co/TqtgRNJy/11.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Открыть пример аномального количества токенов кэша в полном размере"
+            >
+                <img
+                    src="https://i.ibb.co/TqtgRNJy/11.png"
+                    alt="Пример записи журнала с аномально большим числом токенов кэша"
+                    loading="lazy"
+                >
+            </a>
+            <figcaption>Пример в журнале использования. Нажмите на изображение, чтобы открыть его крупнее.</figcaption>
+        </figure>
+    </div>
+</section>
+
+    
     <section class="section" id="special" aria-labelledby="specialTitle">
         <div class="section-header">
             <div class="section-icon" aria-hidden="true">🔄</div>
